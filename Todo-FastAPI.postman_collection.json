@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "5e75346b-2e46-4848-87d1-731834c57f22",
+		"name": "Todo-FastAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16619415"
+	},
+	"item": [
+		{
+			"name": "Root",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/api"
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password\",\n  \"username\": \"username\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{domain}}/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{domain}}/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"Creating register and login endpoints\",\n  \"due_date\": \"2024-07-14\",\n  \"status\": \"complete\",\n  \"title\": \"Building API endpoints\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/api/users/:user_id/tasks/create",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"users",
+						":user_id",
+						"tasks",
+						"create"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/api/users/:user_id/tasks",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"users",
+						":user_id",
+						"tasks"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/api/users/:user_id/tasks/:task_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"users",
+						":user_id",
+						"tasks",
+						":task_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": ""
+						},
+						{
+							"key": "task_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"Creating tasks endpoints\",\n  \"due_date\": \"2024-07-14\",\n  \"status\": \"pending\",\n  \"title\": \"Building API endpoints\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/api/users/:user_id/tasks/:task_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"users",
+						":user_id",
+						"tasks",
+						":task_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": ""
+						},
+						{
+							"key": "task_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/api/users/:user_id/tasks/:task_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"users",
+						":user_id",
+						"tasks",
+						":task_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": ""
+						},
+						{
+							"key": "task_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"scope": "openid profile email",
+			"authUrl": "https://{{auth0_domain}}/authorize?audience={{auth0_audience}}",
+			"state": "random_string",
+			"client_authentication": "body",
+			"grant_type": "authorization_code",
+			"username": "en.a.saeed",
+			"clientSecret": "{{auth0_client_secret}}",
+			"clientId": "{{auth0_client_id}}",
+			"accessTokenUrl": "https://{{auth0_domain}}/oauth/token",
+			"redirect_uri": "https://www.getpostman.com/oauth2/callback",
+			"tokenName": "Auth0 Token",
+			"addTokenTo": "header"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
