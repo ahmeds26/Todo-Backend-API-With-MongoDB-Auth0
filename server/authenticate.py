@@ -3,6 +3,7 @@ from fastapi.security import SecurityScopes, HTTPAuthorizationCredentials, HTTPB
 from .config import get_settings
 from dotenv import dotenv_values
 from typing import Optional
+from jwt import PyJWKClient
 import jwt
 
 class UnauthorizedException(HTTPException):
@@ -23,7 +24,7 @@ class VerifyToken:
             # This gets the JWKS from a given URL and does processing so you can
             # use any of the keys available
             jwks_url = f'https://{self.config.auth0_domain}/.well-known/jwks.json'
-            self.jwks_client = jwt.PyJWKClient(jwks_url)
+            self.jwks_client = PyJWKClient(jwks_url)
 
     async def verify(self,
                      security_scopes: SecurityScopes,

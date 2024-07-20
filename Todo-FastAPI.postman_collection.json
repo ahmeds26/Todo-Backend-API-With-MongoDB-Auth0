@@ -14,7 +14,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"url": "{{domain}}/api"
+				"url": "{{domain}}/"
 			},
 			"response": []
 		},
@@ -35,7 +35,7 @@
 						}
 					}
 				},
-				"url": "{{domain}}/api/register"
+				"url": "{{domain}}/register"
 			},
 			"response": []
 		},
@@ -59,7 +59,7 @@
 						}
 					]
 				},
-				"url": "{{domain}}/api/login"
+				"url": "{{domain}}/login"
 			},
 			"response": []
 		},
@@ -78,12 +78,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/api/users/:user_id/tasks/create",
+					"raw": "{{domain}}/users/:user_id/tasks/create",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
-						"api",
 						"users",
 						":user_id",
 						"tasks",
@@ -105,12 +104,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{domain}}/api/users/:user_id/tasks",
+					"raw": "{{domain}}/users/:user_id/tasks",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
-						"api",
 						"users",
 						":user_id",
 						"tasks"
@@ -131,12 +129,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{domain}}/api/users/:user_id/tasks/:task_id",
+					"raw": "{{domain}}/users/:user_id/tasks/:task_id",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
-						"api",
 						"users",
 						":user_id",
 						"tasks",
@@ -171,12 +168,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/api/users/:user_id/tasks/:task_id",
+					"raw": "{{domain}}/users/:user_id/tasks/:task_id",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
-						"api",
 						"users",
 						":user_id",
 						"tasks",
@@ -202,12 +198,11 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{domain}}/api/users/:user_id/tasks/:task_id",
+					"raw": "{{domain}}/users/:user_id/tasks/:task_id",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
-						"api",
 						"users",
 						":user_id",
 						"tasks",

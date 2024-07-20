@@ -60,11 +60,11 @@ def shutdown_db_client():
     app.mongodb_client.close()
     
 
-app.include_router(UserRouter, tags=["Users"], prefix="/api")
-app.include_router(TaskRouter, tags=["Tasks"], prefix="/api")
+app.include_router(UserRouter, tags=["Users"], prefix="")
+app.include_router(TaskRouter, tags=["Tasks"], prefix="")
 
 
-@app.get("/api", tags=["Root"])
+@app.get("/", tags=["Root"])
 async def root(request: Request):
     response = """
                 <html>

@@ -151,5 +151,5 @@ Develop a Backend API for a Todo application using Python, integrating MongoDB a
    * **To Test the API using _Postman Collection_**
 
      * You can make **Postman Tests** from the collection file in the project root or from utilizing the collection link 
-       [Postman Collection](https://documenter.getpostman.com/view/16619415/2sA3kSo3Up#641cfeb3-56ba-492e-af11-083f38acc288)
+       [Postman Collection](https://documenter.getpostman.com/view/16619415/2sA3kSo3Up)
 
