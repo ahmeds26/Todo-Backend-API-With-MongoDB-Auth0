@@ -1,5 +1,8 @@
 from fastapi import FastAPI, Request, status
 from fastapi.responses import HTMLResponse, JSONResponse, Response
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from server.users import users_router as UserRouter
@@ -30,8 +33,20 @@ You can do the following:
 * **Delete a single task of a specific user**
 """
 
+middleware = [
+    Middleware(
+        CORSMiddleware,
+        allow_origins=['*'],
+        allow_credentials=True,
+        allow_methods=['*'],
+        allow_headers=['*']
+    )
+]
+
 app = FastAPI(
+    middleware=middleware,
     title="TODO APP API",
+    docs_url="/docs",
     description=description,
     summary="Implementation of a Todo API Assignment",
     version="0.0.1",

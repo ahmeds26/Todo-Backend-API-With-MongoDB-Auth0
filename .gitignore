@@ -122,6 +122,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+.gcloudignore
 .env.development
 .env
 .venv
