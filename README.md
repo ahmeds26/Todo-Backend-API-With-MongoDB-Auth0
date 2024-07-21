@@ -45,8 +45,9 @@ Develop a Backend API for a Todo application using Python, integrating MongoDB a
 ## ***Technology Stack***
    1. Python (FastAPI)
    2. MongoDB Atlas
-   3. Postman Collections
-   4. Google App Engine
+   3. Auth0
+   4. Postman Collections
+   5. Google App Engine
 
 ## ***Installation***
 
@@ -85,7 +86,7 @@ Develop a Backend API for a Todo application using Python, integrating MongoDB a
      3. Clone this repo using this command from your terminal:
 
         ```bash
-        $ git clone https://github.com/ahmeds26/Todo-Backend-API.git
+        $ git clone https://github.com/ahmeds26/Todo-Backend-API-With-MongoDB-Auth0.git
         ```
     
      4. Install the dependencies by running the requirements.txt file using this command:
@@ -152,4 +153,65 @@ Develop a Backend API for a Todo application using Python, integrating MongoDB a
 
      * You can make **Postman Tests** from the collection file in the project root or from utilizing the collection link 
        [Postman Collection](https://documenter.getpostman.com/view/16619415/2sA3kSo3Up)
+
+
+## ***Deployment***
+
+   * **To Deploy the app to _Google APP Engine_**
+
+     * Create a New Project on Google Cloud Platform from [Google Console](https://console.cloud.google.com/)
+
+     * Activate Cloud Shell from within the created project in the previous step
+
+     * Clone the project from Github by executing the following command in the Cloud Shell:
+
+       ```bash
+       $ git clone https://github.com/ahmeds26/Todo-Backend-API-With-MongoDB-Auth0.git
+       ```
+     
+     * Create a virtual environment and activate it:
+
+       ```bash
+       $ virtualenv env
+       ```
+       ```bash
+       $ source env/bin/activate
+       ```
+
+      * Install requirements.txt file:
+
+        ```bash
+        $ pip install -r requirements.txt
+        ```
+
+      * Check the app is working fine before deployment by running this command:
+        
+        ```bash
+        $ gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+        ```
+
+      * To preview the running app **_Click_** on **Preview Button** at the top right of the cloud shell and **Change Port** to **8000**
+
+      * Deploy the app to **Google APP Engine** using this command:
+      
+        ```bash
+        $ gcloud app deploy app.yaml
+        ```
+       
+      * To view the deployed app enter the command:
+
+        ```bash
+        $ gcloud app browse
+        ```
+        
+        It will open/give the hosted app url
+
+      * You can access the already deployed version of this project through this url <https://fastapi-app-430109.ew.r.appspot.com/>
+
+        And to access the endpoints docs url to test the app from this url <https://fastapi-app-430109.ew.r.appspot.com/docs>
+
+        
+     
+
+
 
