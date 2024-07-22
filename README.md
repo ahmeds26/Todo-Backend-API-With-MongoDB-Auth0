@@ -125,7 +125,7 @@ Develop a Backend API for a Todo application using Python, integrating MongoDB a
      2. Create an API on your Auth0 Dashboard:
 
         * **Name** of the API can be any name you want.
-        * **Identifier** could be your FastAPI Root endpoint for example here <http://localhost:8000/api>
+        * **Identifier** could be your FastAPI Root endpoint for example here <http://localhost:8000/>
         * **Signing Algorithm** keep it as it is **RS256**
 
    * **To Handle _Auth0_ Environment Variables**
